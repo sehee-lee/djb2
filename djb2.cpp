@@ -1,3 +1,9 @@
+/***** DJB2 hash for english word. *****/
+/***** Coded by Jayden Sehee Lee.  *****/
+/*** e-mail : jaydensehee@gmail.com  ***/
+/*****  web : www.jaydensehee.com  *****/
+
+
 #include <iostream>
 #include <time.h>
 
@@ -7,9 +13,7 @@ unsigned long djb2_hash(unsigned char *str)
 {
 
     unsigned long hash = 5381;
-    
     int c;
-    
     while (c = *str++)
         hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
                 
@@ -21,12 +25,9 @@ unsigned long djb2_hash(unsigned char *str)
 int main(void){
 
     unsigned char *str;
-
     cin >> str;
     cout << "tag : " <<  str << endl;
-    
     unsigned long hash_result = djb2_hash(str);
-    
     cout << "Hash : " << hash_result << endl;
     return 0;
 }
